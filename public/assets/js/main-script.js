@@ -101,7 +101,7 @@ function shakeImage(event) {
 
 // Buttons to go between html's
 function goToQuoteList() {
-    window.location.href = './quote-list/quote-list.html';
+    window.location.href = './quote-list';
 }
 
 // Event Listeners
