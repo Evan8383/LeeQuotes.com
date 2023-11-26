@@ -3,8 +3,10 @@ const image = document.getElementById('shakingImage');
 const quoteContainer = document.getElementById('quoteContainer');
 const quoteList = document.getElementById('full-list-btn');
 const goBackBtn = document.getElementById('go-back-btn');
+const newFormBtn = document.querySelector('#newFormBtn')
 
 // const quotes = [
+
 //   {
 //     quote: `Banana`
 //   },
@@ -57,13 +59,8 @@ const goBackBtn = document.getElementById('go-back-btn');
 //     quote: `Objection!\nLeading the\nwitness`
 //   },
 // ];
-async function getRandomQuote() {
-  const response = await fetch('/db/quotes.json')
-  const data = await response.json()
-  data.quotes
-
-}
 // Displays a random quote on top of the image
+
 async function showRandomQuote() {
   // Choose a random quote
   
@@ -113,9 +110,14 @@ function goToQuoteList() {
   window.location.href = './quote-list';
 }
 
+function goToNewForm() {
+  window.location.href = './quote-form'
+}
+
 // Event Listeners
 image.addEventListener('click', shakeImage);
 image.addEventListener('dblclick', (event) => {
   event.preventDefault();
 });
 quoteList.addEventListener('click', goToQuoteList);
+newFormBtn.addEventListener('click', goToNewForm)

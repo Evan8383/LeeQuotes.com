@@ -91,7 +91,7 @@ h2 {
 }
 
 /* FULL QUOTE LIST */
-#full-list-btn {
+#full-list-btn, #newFormBtn {
     background: radial-gradient(closest-side, rgb(72, 31, 119), rgb(46, 14, 85));
     box-shadow: 1px 10px 5px rgb(21, 2, 44);
     border-radius: 10px;

@@ -12,6 +12,10 @@ app.get('/db/quotes.json', (req, res) => {
   res.sendFile(__dirname + '/db/quotes.json')
 })
 
+app.get('/quote-form', (req, res) => {
+  res.sendFile(__dirname + '/public/assets/quote-form.html')
+})
+
 app.listen(PORT, () => {
   console.log(`Server running http://localhost:${PORT}`)
 })
