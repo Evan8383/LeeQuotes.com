@@ -1,4 +1,6 @@
+const quotes = require('./db/quotes.json');
 const express = require('express');
+const fs = require('fs').promises;
 const app = express()
 const PORT = 3001
 
@@ -17,8 +19,11 @@ app.get('/quote-form', (req, res) => {
   res.sendFile(__dirname + '/public/assets/quote-form.html')
 })
 
-app.post('/quote-form', (req, res)=>{
-  const data = req.body
+app.post('/quote-form', async (req, res) => {
+  const data = await req.body
+  quotes.quotes.push(data.data)
+  fs.writeFile('./db/quotes.json', JSON.stringify({ quotes: quotes.quotes }))
+  res.send(console.log('Quote added'))
 })
 
 

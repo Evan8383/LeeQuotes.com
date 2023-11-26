@@ -4,15 +4,14 @@ const listContainer = document.getElementById('listContainer');
 const quoteForm = document.getElementById('quoteForm');
 const quoteInput = document.querySelector('#quoteInput')
 
-async function handleSubmit(e) {
+function handleSubmit(e) {
   e.preventDefault()
   const data = quoteInput.value
-  console.log(data)
 
-  await fetch('http://localhost:3001/quote-form', {
+  fetch('http://localhost:3001/quote-form', {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({data})
+    body: JSON.stringify({ data })
   })
 
 }
